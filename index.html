@@ -17,6 +17,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="java-script/index.js"></script>
 </head>
 
 <body>
@@ -48,14 +50,16 @@
             </div>
         </div>
         <div class="container">
-        <div class="main-toggle">
-                <div class="toggle-logo">
-                    <img src="./images/633b16170a5347c77eee4653_welcome.svg.png" alt="">
-                </div>
-                <div class="toogle">
-                    <p id="nav-link"><a href="#" id="nav-toggle">[-|-]</a></p>
-                </div>
+       <div class="main-toggle">
+            <div class="toggle-logo">
+                <img src="./images/633b16170a5347c77eee4653_welcome.svg.png" alt="">
             </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
             </div>
     </header>
 
@@ -656,11 +660,21 @@ $(document).ready(function(){
 </script>
 <!-- ===========toggle========== -->
    <script>
-        $(".toogle a#nav-toggle").click(function () {
+      $(".menu-toggle").click(function () {
 
             $(".main-navbar").slideToggle("");
         });
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const toggle = document.getElementById("menuToggle");
+
+            toggle.addEventListener("click", function () {
+                this.classList.toggle("active");
+            });
+
+        });
     </script>
+  
 </body>
 
 </html>
